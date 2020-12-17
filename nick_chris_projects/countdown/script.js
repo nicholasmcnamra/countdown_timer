@@ -1,3 +1,4 @@
+
 function timeElapsed() {
     let targetDate = new Date ('December 25, 2020 00:00:00');
     let currentDate = new Date();
@@ -8,6 +9,7 @@ function timeElapsed() {
 }
 
 function timeConversion() {
+    const days = Math.floor(timeElapsed() / (86400 * 1000));
     const hours = Math.floor(timeElapsed() / 3600000);
     const remainderHours = timeElapsed() % 3600000;
     const minutes = Math.floor(remainderHours / 60000);
@@ -18,5 +20,24 @@ function timeConversion() {
     console.log(minutes);
     console.log(remainderMinutes);
     console.log(seconds);
+
+    return {
+        days,
+        hours,
+        minutes,
+        seconds
+    }
 }
+
+function updateTime() {
+const daysElement = document.querySelector(".days.display");
+const hoursElement = document.querySelector(".hours.display");
+const minutesElement = document.querySelector(".minutes.display");
+const secondsElement = document.querySelector(".seconds.display");
+
+timeElapsed();
+const convertedTime = timeConversion();
+}
+
+updateTime();
 
