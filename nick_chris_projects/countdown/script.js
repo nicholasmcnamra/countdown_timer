@@ -38,8 +38,11 @@ function updateTime() {
 
   daysElement.textContent = convertedTime.days;
   hoursElement.textContent = convertedTime.hours;
+  minutesElement.textContent = convertedTime.minutes;
+  secondsElement.textContent = convertedTime.seconds;
 
   timeElapsed();
 }
 
 updateTime();
+const myInterval = setInterval(updateTime, 1000);
